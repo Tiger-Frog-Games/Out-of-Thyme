@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Mathematics;
 using UnityEngine;
 
 namespace TigerFrogGames
@@ -55,10 +56,7 @@ namespace TigerFrogGames
 
         private void FixedUpdate()
         {
-            var x = input.frameInput.Move.x;
-            var y = input.frameInput.Move.y;
-
-            rb.velocity = new Vector3(x * playerSpeed *currentDashMultiplier,0, y * playerSpeed * currentDashMultiplier);
+            movement();
         }
 
         #endregion
@@ -96,6 +94,18 @@ namespace TigerFrogGames
             this.enabled = (newGameState == GameState.Gameplay) ;
         }
 
+        /// <summary>
+        /// This is a very simple movement script. It has a few problems like getting stuck on walls and breaks/walking in the air.
+        /// With more time, I would refine it more. 
+        /// </summary>
+        private void movement()
+        {
+            var x = input.frameInput.Move.x;
+            var y = input.frameInput.Move.y;
+            
+            rb.velocity = new Vector3(x * playerSpeed *currentDashMultiplier,0, y * playerSpeed * currentDashMultiplier);
+        }
+        
         private void dash()
         {
             isDashing = true;

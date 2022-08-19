@@ -10,7 +10,7 @@ namespace TigerFrogGames
         public FrameInput frameInput { get; private set; }
         
         [SerializeField] private InputActionAsset inputActions;
-        private InputAction _move, _use, _dash, _pickUp;
+        private InputAction _move, _use, _dash, _pickUpOrPlace;
         
         #endregion
 
@@ -33,7 +33,7 @@ namespace TigerFrogGames
 
             _move = inputActions.FindAction("Move");
             _use = inputActions.FindAction("Use");
-            _pickUp = inputActions.FindAction("PickUp");
+            _pickUpOrPlace = inputActions.FindAction("PickUp");
             _dash = inputActions.FindAction("Dash");
         }
 
@@ -51,7 +51,7 @@ namespace TigerFrogGames
             return new FrameInput{
                 Move = _move.ReadValue<Vector2>(),
                 Use  = _use.WasPressedThisFrame(),
-                PickUp = _pickUp.WasPressedThisFrame(),
+                PickUpOrPlace = _pickUpOrPlace.WasPressedThisFrame(),
                 Dash = _dash.WasPressedThisFrame()
             };
         }
@@ -59,7 +59,7 @@ namespace TigerFrogGames
         public struct FrameInput {
             public Vector2 Move;
             public bool Use;
-            public bool PickUp;
+            public bool PickUpOrPlace;
             public bool Dash;
         }
         
