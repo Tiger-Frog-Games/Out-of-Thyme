@@ -82,6 +82,7 @@ MonoBehaviour:
   visualRoot: {fileID: 1015886262224713566}
   pickUpable: {fileID: 7707820966505672963}
   rb: {fileID: -3150420332932609518}
+  bc: {fileID: 8534994960696679290}
 --- !u!114 &7707820966505672963
 MonoBehaviour:
   m_ObjectHideFlags: 0

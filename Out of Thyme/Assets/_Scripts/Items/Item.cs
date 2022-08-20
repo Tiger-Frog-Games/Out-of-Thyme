@@ -13,6 +13,7 @@ namespace TigerFrogGames
         [SerializeField] private GameObject visualRoot;
         [SerializeField] private InteractablePickUpable pickUpable;
         [SerializeField] private Rigidbody rb;
+        [SerializeField] private BoxCollider bc;
         
         private GameObject _spawnedVisual;
         #endregion
@@ -45,12 +46,14 @@ namespace TigerFrogGames
         {
             rb.isKinematic = true;
             pickUpable.enabled = false;
+            bc.enabled = false;
         }
         
         public void DropItemToGround()
         {
             rb.isKinematic = false;
             pickUpable.enabled = true;
+            bc.enabled = true;
         }
         
         #endregion

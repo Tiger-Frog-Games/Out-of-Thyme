@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d5a3dee6f73ebb2459185670b0ec2403, type: 3}
-  m_Name: Carrot
+  m_Name: Carrot Soup
   m_EditorClassIdentifier: 
-  <Name>k__BackingField: Carrot
-  <VisualPrefab>k__BackingField: {fileID: 1965021379386753703, guid: 12de592af21012c4294b42890afff5ae,
+  <Name>k__BackingField: Carrot Soup
+  <VisualPrefab>k__BackingField: {fileID: 9161659523059593097, guid: a818bcd9ca1130946a154a9a6b26d42a,
     type: 3}
   <OffSetHeldOnPlayerHead>k__BackingField: {x: 0, y: 0.25, z: 0}
   <OffsetHeldOnInteractableItemHolder>k__BackingField: {x: 0, y: 0, z: 0}

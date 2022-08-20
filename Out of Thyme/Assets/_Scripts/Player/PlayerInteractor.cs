@@ -51,6 +51,7 @@ namespace TigerFrogGames
                 _hoveredInteractable = null;
                 //I would use a paid asset SensorToolKit 2 here to make it so that you can detect in a small cylinder area so it would have a dead band to detected items. But I did not want to use any assets in this demo
                 if (Physics.Raycast(interactRayRoot.transform.position, -Vector3.up, out hit, detectedInteratablesLayer)) {
+                    
                     if (hit.transform.TryGetComponent(out Interactable hitInteractable))
                     {
                         _hoveredInteractable = hitInteractable;
@@ -98,6 +99,15 @@ namespace TigerFrogGames
         private void GameStateManager_OnGameStateChanged(GameState newGameState)
         {
             this.enabled = (newGameState == GameState.Gameplay) ;
+        }
+
+        public InteratableItemHolder GetInteratableItemHolderIsHovered()
+        {
+            if(_hoveredInteractable is InteratableItemHolder hoveredInteractableItemHolder)
+            {
+                return hoveredInteractableItemHolder;
+            }
+            return null;
         }
         
         #endregion
