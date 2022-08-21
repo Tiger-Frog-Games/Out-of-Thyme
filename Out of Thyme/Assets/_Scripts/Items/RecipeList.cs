@@ -16,12 +16,12 @@ namespace TigerFrogGames
         /// <param name="itemsToCheck"></param>
         /// <returns>Success: returns a valid recipe. 
         /// Failure: return default if not found</returns>
-        public RecipeData GetValidRecipie(List<ItemData> itemsToCheck)
+        public RecipeData GetValidRecipie(ItemTransformationType transformationType,List<ItemData> itemsToCheck)
         {
             foreach (var recipe in AllRecipies)
             {
                 
-                if ( CompareLists<ItemData>(recipe.RequiredItems, itemsToCheck))
+                if ( recipe.TypeOfTransformation == transformationType && CompareLists<ItemData>(recipe.RequiredItems, itemsToCheck))
                 {
                     return recipe;
                 }

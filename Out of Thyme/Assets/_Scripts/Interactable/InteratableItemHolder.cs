@@ -24,11 +24,11 @@ namespace TigerFrogGames
         public override void Interact(PlayerItemHolder playerItemHolder)
         {
             
-            if ( _heldItem == null && playerItemHolder.HeldItem != null)
+            if (playerItemHolder.HeldItem != null)
             {
                 addPlayerItemToItemHolder(playerItemHolder);
             }
-            else if (_heldItem != null && playerItemHolder.HeldItem == null)
+            else if (playerItemHolder.HeldItem == null)
             {
                 pickUpFromItemHolder(playerItemHolder);
             }

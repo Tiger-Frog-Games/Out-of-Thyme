@@ -13,12 +13,13 @@ namespace TigerFrogGames
     {
         #region Variables
 
+        [SerializeField] private int maxNumberOfItems;
         [SerializeField] private ItemTransformationType transformationType;
         [SerializeField] private GameObject itemPrefabToSpawn;
         
         [SerializeField] private RecipeList recipies;
 
-         private List<ItemData> _heldItems = new ();
+         private List<ItemData> _heldItemsToBeCombined = new ();
          private RecipeData _currentRecipe;
          
          public bool _isTransoforming { private set; get; }
@@ -32,6 +33,7 @@ namespace TigerFrogGames
         private void Awake()
         {
             GameStateManager.Instance.OnGameStateChanged += GameStateManager_OnGameStateChanged;
+            _isTransoforming = false;  
         }
 
         private void OnDestroy()
@@ -70,7 +72,7 @@ namespace TigerFrogGames
                 return;
             }
 
-            _heldItems.Clear();
+            _heldItemsToBeCombined.Clear();
             
             _currentRecipe = default;
             
@@ -80,7 +82,9 @@ namespace TigerFrogGames
         
         protected override void addPlayerItemToItemHolder(PlayerItemHolder playerItemHolder)
         {
-            _heldItems.Add(playerItemHolder.HeldItem.ItemData);
+            if(_heldItemsToBeCombined.Count  >= maxNumberOfItems) return;
+            
+            _heldItemsToBeCombined.Add(playerItemHolder.HeldItem.ItemData);
             
             ObjectPool.Store(playerItemHolder.HeldItem.GameObject());
             
@@ -91,6 +95,26 @@ namespace TigerFrogGames
 
         protected override void pickUpFromItemHolder(PlayerItemHolder playerItemHolder)
         {
+            if(_isTransoforming == true) return;
+            
+            if (_isTransoforming == false && _heldItemsToBeCombined.Count > 0)
+            {
+                ItemData tempItemData = _heldItemsToBeCombined[_heldItemsToBeCombined.Count - 1];
+                _heldItemsToBeCombined.RemoveAt(_heldItemsToBeCombined.Count - 1);
+                
+                //Need to create another since we return it to the pool when it enters. 
+                GameObject retrieved = ObjectPool.Retrieve(itemPrefabToSpawn, transform.position, Quaternion.identity);
+                
+                if (retrieved.TryGetComponent(out Item item))
+                {
+                    item.SetUpItem(_currentRecipe.CreatedItem);
+                    playerItemHolder.PickUpItem(item);
+                    return;
+                }
+                return;
+            }
+            if(_heldItem == null) return;
+
             base.pickUpFromItemHolder(playerItemHolder);
             if(_isTransoforming == true) stopTransforming();
         }
@@ -104,7 +128,7 @@ namespace TigerFrogGames
         {
             if(_isTransoforming) stopTransforming();
             
-            _currentRecipe = recipies.GetValidRecipie(_heldItems);
+            _currentRecipe = recipies.GetValidRecipie(transformationType, _heldItemsToBeCombined);
             
             if(_currentRecipe.TimeToTransform == 0) return;
 

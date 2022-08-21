@@ -12,7 +12,9 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/f1212ad1dec44ce7b7147976b91869c3157800/ee/b55c7f34/Vector3.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_Scripts/Event Channels/EventChannelItemData.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Scripts/GameStateManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_Scripts/Interactable/InteractableItemSeller.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Scripts/Interactable/InteractableItemTransformer.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Scripts/Interactable/InteractablePickUpable.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Scripts/Interactable/InteractableRecipeCombiner.cs" root0="FORCE_HIGHLIGHTING" />
@@ -83,6 +85,8 @@
       <workItem from="1660692165145" duration="50244000" />
       <workItem from="1660935990417" duration="14480000" />
       <workItem from="1660972555385" duration="6674000" />
+      <workItem from="1661015805481" duration="6292000" />
+      <workItem from="1661122448329" duration="769000" />
     </task>
     <servers />
   </component>

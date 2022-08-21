@@ -25,6 +25,8 @@ namespace TigerFrogGames
 
         public void PickUpItem(Item newHeldItem)
         {
+            if(newHeldItem == null) return;
+            
             HeldItem = newHeldItem;
             
             HeldItem.transform.parent = heldItemRoot.transform;
