@@ -16,12 +16,18 @@ namespace TigerFrogGames
         /// <param name="itemsToCheck"></param>
         /// <returns>Success: returns a valid recipe. 
         /// Failure: return default if not found</returns>
-        public RecipeData GetValidRecipie(ItemTransformationType transformationType,List<ItemData> itemsToCheck)
+        public RecipeData GetValidRecipie(ItemTransformationType transformationType,List<Item> itemsToCheck)
         {
+            List<ItemData> checkerList = new List<ItemData>();
+            foreach (var VARIABLE in itemsToCheck)
+            {
+                checkerList.Add(VARIABLE.ItemData);
+            }
+            
             foreach (var recipe in AllRecipies)
             {
                 
-                if ( recipe.TypeOfTransformation == transformationType && CompareLists<ItemData>(recipe.RequiredItems, itemsToCheck))
+                if ( recipe.TypeOfTransformation == transformationType && CompareLists<ItemData>(recipe.RequiredItems, checkerList))
                 {
                     return recipe;
                 }
@@ -31,7 +37,7 @@ namespace TigerFrogGames
         }
         
         
-        
+        //Found on stack overflow. Compares two lists account for dublicates. This should be in a util class. 
         public static bool CompareLists<T>(List<T> aListA, List<T> aListB)
         {
             if (aListA == null || aListB == null || aListA.Count != aListB.Count)

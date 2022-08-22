@@ -8,7 +8,7 @@ namespace TigerFrogGames
     {
         #region Variables
 
-        [SerializeField] private GameObject heldObjectRoot;
+        [SerializeField] protected GameObject heldObjectRoot;
         protected Item _heldItem;
         
         #endregion

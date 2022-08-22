@@ -21,7 +21,13 @@ MonoBehaviour:
   - <CreatedItem>k__BackingField: {fileID: 11400000, guid: 24881f0989e53e3489d99bc37ee2e7ef,
       type: 2}
     <TypeOfTransformation>k__BackingField: 2
-    <TimeToTransform>k__BackingField: 20
+    <TimeToTransform>k__BackingField: 5
     <RequiredItems>k__BackingField:
     - {fileID: 11400000, guid: c6d7bf9ec824f1749bc5b39cede16b0b, type: 2}
     - {fileID: 11400000, guid: c6d7bf9ec824f1749bc5b39cede16b0b, type: 2}
+  - <CreatedItem>k__BackingField: {fileID: 11400000, guid: c6d7bf9ec824f1749bc5b39cede16b0b,
+      type: 2}
+    <TypeOfTransformation>k__BackingField: 1
+    <TimeToTransform>k__BackingField: 7
+    <RequiredItems>k__BackingField:
+    - {fileID: 11400000, guid: 36b46ac0f46d97e4e813b463007d5998, type: 2}

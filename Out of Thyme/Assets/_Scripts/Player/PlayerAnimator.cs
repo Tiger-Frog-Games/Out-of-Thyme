@@ -18,9 +18,7 @@ namespace TigerFrogGames
         [SerializeField] private Rigidbody rb;
         [SerializeField] private GameObject visual;
         [SerializeField] private PlayerMovement playerMovement;
-
-        [SerializeField] private Vector3 startDir;
-
+        
         [SerializeField] private float rotationDampen;
         #endregion
 
