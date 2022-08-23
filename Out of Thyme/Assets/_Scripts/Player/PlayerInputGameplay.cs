@@ -8,8 +8,10 @@ namespace TigerFrogGames
         #region Variables
     
         public FrameInput frameInput { get; private set; }
+
+        [SerializeField] private PlayerInput playerInput;
         
-        [SerializeField] private InputActionAsset inputActions;
+        private InputActionAsset _inputActions;
         private InputAction _move, _use, _dash, _pickUpOrPlace;
         
         #endregion
@@ -17,24 +19,26 @@ namespace TigerFrogGames
         #region Unity Methods
 
         private void OnEnable() {
-            inputActions.Enable();
+            _inputActions.Enable();
         }
 
         private void OnDisable() {
-            inputActions.Disable();
+            _inputActions.Disable();
         }
         
         private void Awake()
         {
-            if (inputActions == null)
+            _inputActions = playerInput.actions;
+            
+            if (_inputActions == null)
             {
                 return;
             }
 
-            _move = inputActions.FindAction("Move");
-            _use = inputActions.FindAction("Use");
-            _pickUpOrPlace = inputActions.FindAction("PickUp");
-            _dash = inputActions.FindAction("Dash");
+            _move = _inputActions.FindAction("Move");
+            _use = _inputActions.FindAction("Use");
+            _pickUpOrPlace = _inputActions.FindAction("PickUp");
+            _dash = _inputActions.FindAction("Dash");
         }
 
         private void Update()

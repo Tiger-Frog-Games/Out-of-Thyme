@@ -19,16 +19,22 @@ namespace TigerFrogGames
         }
     }
     
+    [Serializable]
     public struct StartGameData
     {
-        public int NumberOfPlayers { private set; get; }
-        public int Difficulty { private set; get; }
-
-
-        public StartGameData(int numberOfPlayers, int difficulty)
+        [field: SerializeField] public int NumberOfPlayers { private set; get; }
+        [field: SerializeField] public int Difficulty { private set; get; }
+        
+        [field: SerializeField] public int StartMin { private set; get; }
+        [field: SerializeField] public int StartSec { private set; get; }
+        
+        public StartGameData(int numberOfPlayers, int difficulty, int startMin, int startSec)
         {
             NumberOfPlayers = numberOfPlayers;
             Difficulty = difficulty;
+            
+            StartMin = startMin;
+            StartSec = startSec;
         }
     }
     

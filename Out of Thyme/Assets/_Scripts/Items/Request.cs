@@ -11,10 +11,16 @@ namespace TigerFrogGames
         [field: SerializeField] public RequestData RequestData { private set; get; }
         public float TimeLeft { private set; get; }
         
+        
         public Request(RequestData requestData)
         {
             RequestData = requestData;
             TimeLeft = RequestData.TimeToComplete;
+        }
+
+        public void changeTime(float deltaTime)
+        {
+            TimeLeft -= deltaTime;
         }
     }
 }

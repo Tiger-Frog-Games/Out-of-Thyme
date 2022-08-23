@@ -10,6 +10,7 @@ namespace TigerFrogGames
     public class ItemData : ScriptableObject
     {
         [field: SerializeField] public string Name { private set; get; }
+        [field: SerializeField] public int ScoreValue { private set; get; }
         [field: SerializeField] public GameObject VisualPrefab { private set; get; }
         [field: SerializeField] public Vector3 OffSetHeldOnPlayerHead { private set; get; }
         [field: SerializeField] public Vector3 OffsetHeldOnInteractableItemHolder { private set; get; }

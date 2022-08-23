@@ -11,5 +11,15 @@ namespace TigerFrogGames
         [field: SerializeField] public String Name { private set; get; }
         [field: SerializeField] public float TimeToComplete { private set; get; }
         [field: SerializeField] public ItemData RequiredItem { private set; get; }
+
+        public float getTimeLeftToComplete()
+        {
+            if (TimeToComplete == 0)
+            {
+                return -1;
+            }
+
+            return TimeToComplete;
+        }
     }
 }
