@@ -14,45 +14,6 @@ namespace TigerFrogGames
         [field: SerializeField] public GameObject VisualPrefab { private set; get; }
         [field: SerializeField] public Vector3 OffSetHeldOnPlayerHead { private set; get; }
         [field: SerializeField] public Vector3 OffsetHeldOnInteractableItemHolder { private set; get; }
-        
-        [field: SerializeField] public ItemTransformations[] ItemTransformations;
-
-        /// <summary>
-        /// Returns the prefab based on what it transforms into. 
-        /// </summary>
-        /// <param name="transformationType"></param>
-        /// <returns></returns>
-        public ItemData getTransformedItemData(ItemTransformationType transformationType)
-        {
-            foreach (var v in ItemTransformations)
-            {
-                if (v.TypeOfTransformation == transformationType)
-                {
-                    return v.ItemData;
-                }
-            }
-
-            return null;
-        }
-
-        /// <summary>
-        /// Gets the time to transform.
-        /// 
-        /// </summary>
-        /// <param name="transformationType"></param>
-        /// <returns>Time to transform or -1 if transformation is not found</returns>
-        public float getTransformationTime(ItemTransformationType transformationType)
-        {
-            foreach (var v in ItemTransformations)
-            {
-                if (v.TypeOfTransformation == transformationType)
-                {
-                    return v.TimeToTransform;
-                }
-            }
-
-            return -1;
-        }
     }
 
     [Serializable]

@@ -18,6 +18,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/_Scripts/Interactable/InteractableItemSeller.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Scripts/Interactable/InteractablePickUpable.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Scripts/Interactable/InteractableRecipeCombiner.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_Scripts/Interactable/InteractableThymeAdder.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Scripts/Items/RecipeList.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Scripts/Managers/PlayerSpawner.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Scripts/Managers/ScoreManager.cs" root0="FORCE_HIGHLIGHTING" />
@@ -94,7 +95,7 @@
       <workItem from="1660972555385" duration="6674000" />
       <workItem from="1661015805481" duration="6292000" />
       <workItem from="1661122448329" duration="10522000" />
-      <workItem from="1661143920225" duration="28043000" />
+      <workItem from="1661143920225" duration="29675000" />
     </task>
     <servers />
   </component>

@@ -171,5 +171,5 @@ MonoBehaviour:
   TestData:
     <NumberOfPlayers>k__BackingField: 2
     <Difficulty>k__BackingField: 1
-    <StartMin>k__BackingField: 3
-    <StartSec>k__BackingField: 0
+    <StartMin>k__BackingField: 0
+    <StartSec>k__BackingField: 100
