@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 namespace TigerFrogGames
@@ -10,6 +11,7 @@ namespace TigerFrogGames
         #region Variables
 
         [SerializeField] private EventChannelRequests OnRequestTimedOut;
+        [SerializeField] private TMP_Text Name;
         
         private Request _request;
 
@@ -66,6 +68,7 @@ namespace TigerFrogGames
         
         public void setUpRequest(Request request)
         {
+            Name.text = request.RequestData.RequiredItem.Name;
             _request = request;
         }
         

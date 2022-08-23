@@ -169,7 +169,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   OnGameStart: {fileID: 11400000, guid: a5f7097a39e57484fb8be8150ff75a17, type: 2}
   TestData:
-    <NumberOfPlayers>k__BackingField: 2
+    <NumberOfPlayers>k__BackingField: 4
     <Difficulty>k__BackingField: 1
     <StartMin>k__BackingField: 0
     <StartSec>k__BackingField: 100

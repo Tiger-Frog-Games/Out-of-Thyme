@@ -12,6 +12,9 @@ namespace TigerFrogGames
         [SerializeField] private EventChannelInt OnScoreChange;
         [SerializeField] private EventChannelFloat OnMultiplierChange;
 
+        [SerializeField] private EventChannel OnGameOver;
+        [SerializeField] private EventChannelInt OnGameOverScoreBroadcast;
+        
         [SerializeField] private EventChannelRequests OnRequestCompletedSuccess;
         [SerializeField] private EventChannelRequests OnRequestCompletedFailure;
         [SerializeField] private EventChannelItemData OnFailedItemSold;
@@ -32,6 +35,8 @@ namespace TigerFrogGames
         {
             OnRequestCompletedSuccess.OnEvent += OnRequestCompletedSuccessOnOnEvent;
             OnRequestCompletedFailure.OnEvent += OnRequestCompletedFailureOnOnEvent;
+            OnGameOver.OnEvent += OnGameOverOnOnEvent;
+            
             OnFailedItemSold.OnEvent += OnFailedItemSoldOnOnEvent; 
         }
         
@@ -39,6 +44,8 @@ namespace TigerFrogGames
         {
             OnRequestCompletedSuccess.OnEvent -= OnRequestCompletedSuccessOnOnEvent;
             OnRequestCompletedFailure.OnEvent -= OnRequestCompletedFailureOnOnEvent;
+            OnGameOver.OnEvent -= OnGameOverOnOnEvent;
+            
             OnFailedItemSold.OnEvent -= OnFailedItemSoldOnOnEvent; 
         }
 
@@ -46,6 +53,11 @@ namespace TigerFrogGames
 
         #region Methods
 
+        private void OnGameOverOnOnEvent()
+        {
+            OnGameOverScoreBroadcast.RaiseEvent(_currentScore);
+        }
+        
         private void OnRequestCompletedSuccessOnOnEvent(Request obj)
         {
             changeMultiplier(multiplierChangeOnSuccess);

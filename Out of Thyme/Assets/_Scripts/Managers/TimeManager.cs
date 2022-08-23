@@ -56,16 +56,19 @@ namespace TigerFrogGames
         {
             //Convert current real time to game time
             currentTime_InGame -= Time.deltaTime * gameRate;
+
             
-            currentMin_InGame = (int) currentTime_InGame / 60;
-            currentSec_InGame = (int) currentTime_InGame / 3600;
+            currentMin_InGame = (int) currentTime_InGame / 3600;
+            currentSec_InGame = (int) currentTime_InGame / 60;
 
             BroadCastTime();
 
             if ( currentTime_InGame <= 0 )
             {
+                GameStateManager.Instance.SetState(GameState.Paused);
                 OnGameOver.RaiseEvent();
             }
+
         }
 
         
@@ -88,14 +91,14 @@ namespace TigerFrogGames
         {
             if (currentMin_InGame != lastMinuteBroadcasted)
             {
-                minChange.RaiseEvent( currentSec_InGame );
-                lastMinuteBroadcasted = currentSec_InGame;
+                minChange.RaiseEvent( currentMin_InGame );
+                lastMinuteBroadcasted = currentMin_InGame;
             }
 
-            if (currentMin_InGame != lastSecBroadcasted)
+            if (currentSec_InGame != lastSecBroadcasted)
             {
-                secChange.RaiseEvent(currentMin_InGame);
-                lastSecBroadcasted = currentMin_InGame;
+                secChange.RaiseEvent(currentSec_InGame);
+                lastSecBroadcasted = currentSec_InGame;
             }
         }
         
@@ -106,7 +109,7 @@ namespace TigerFrogGames
 
         private void OnGameStartOnOnEvent(StartGameData obj)
         {
-            currentTime_InGame = (((obj.StartMin * 3600) + (obj.StartSec * 60)) );
+            currentTime_InGame = CalculateTime(obj.StartMin,obj.StartSec);
             _maxTime = currentTime_InGame;
             
             enabled = true;
@@ -116,6 +119,11 @@ namespace TigerFrogGames
         {
             currentTime_InGame = Mathf.Clamp(currentTime_InGame + (TimeThymeAdds * 60) , 0, _maxTime);
             BroadCastTime();
+        }
+
+        public static float CalculateTime(float min, float sec)
+        {
+            return (((min * 3600) + (sec * 60)));
         }
         
         #endregion

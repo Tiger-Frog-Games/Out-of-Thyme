@@ -11,6 +11,8 @@ namespace TigerFrogGames
     {
         #region Variables
 
+        [SerializeField] private EventChannelGameStart OnGameStart;
+        
         [SerializeField] private EventChannelItemData OnItemSold;
 
         [SerializeField] private EventChannelRequests OnRequestCreated;
@@ -30,25 +32,21 @@ namespace TigerFrogGames
 
         [SerializeField] private int StartingRequests = 3;
 
+        [SerializeField] private float startDelayForRequests = 7.5f;
+        [SerializeField] private float delayBetweenStartingRequests = 3f;
+        
         private bool _isGamePaused;
             
         
         #endregion
 
         #region Unity Methods
-
-        private void Start()
-        {
-            for (int i = 0; i < StartingRequests; i++)
-            {
-                AddNewRequest();
-            }
-        }
-
+        
         private void Awake()
         {
             GameStateManager.Instance.OnGameStateChanged += GameStateManager_OnGameStateChanged;
             
+            OnGameStart.OnEvent += OnGameStartOnOnEvent;
             OnItemSold.OnEvent += OnItemSoldOnOnEvent;
             OnRequestTimedOut.OnEvent += OnRequestTimedOutOnOnEvent;
         }
@@ -57,6 +55,7 @@ namespace TigerFrogGames
         {
             GameStateManager.Instance.OnGameStateChanged -= GameStateManager_OnGameStateChanged;
             
+            OnGameStart.OnEvent -= OnGameStartOnOnEvent;
             OnItemSold.OnEvent -= OnItemSoldOnOnEvent;
             OnRequestTimedOut.OnEvent -= OnRequestTimedOutOnOnEvent;
         }
@@ -69,6 +68,21 @@ namespace TigerFrogGames
         private void GameStateManager_OnGameStateChanged(GameState newGameState)
         {
             _isGamePaused = (newGameState == GameState.Paused) ;
+        }
+        
+        private void OnGameStartOnOnEvent(StartGameData obj)
+        {
+            StartCoroutine(startGameRequests());
+        }
+
+        private IEnumerator startGameRequests()
+        {
+            yield return new WaitForSeconds(startDelayForRequests);
+            for (int i = 0; i < StartingRequests; i++)
+            {
+                AddNewRequest();
+                yield return new WaitForSeconds(delayBetweenStartingRequests);
+            }
         }
         
         private void AddNewRequest()

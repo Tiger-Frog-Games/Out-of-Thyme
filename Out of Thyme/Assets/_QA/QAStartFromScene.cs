@@ -11,6 +11,7 @@ namespace TigerFrogGames
 
         [SerializeField] private EventChannelGameStart OnGameStart;
         [SerializeField] private StartGameData TestData;
+        
         #endregion
 
         #region Unity Methods

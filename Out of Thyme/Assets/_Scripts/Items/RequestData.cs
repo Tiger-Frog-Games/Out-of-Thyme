@@ -8,8 +8,7 @@ namespace TigerFrogGames
     [CreateAssetMenu(menuName = "Request/Basic")]
     public class RequestData : ScriptableObject
     {
-        [field: SerializeField] public String Name { private set; get; }
-        [field: SerializeField] public float TimeToComplete { private set; get; }
+       [field: SerializeField] public float TimeToComplete { private set; get; }
         [field: SerializeField] public ItemData RequiredItem { private set; get; }
 
         public float getTimeLeftToComplete()

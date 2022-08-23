@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Name>k__BackingField: Tyme Seeds
   <ScoreValue>k__BackingField: 0
-  <VisualPrefab>k__BackingField: {fileID: 1965021379386753703, guid: 12de592af21012c4294b42890afff5ae,
+  <VisualPrefab>k__BackingField: {fileID: 9161659523059593097, guid: b19bd603be2716b408e2627f5aa038fa,
     type: 3}
   <OffSetHeldOnPlayerHead>k__BackingField: {x: 0, y: 0.25, z: 0}
   <OffsetHeldOnInteractableItemHolder>k__BackingField: {x: 0, y: 0, z: 0}

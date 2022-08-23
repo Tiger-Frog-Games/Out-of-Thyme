@@ -16,18 +16,60 @@ MonoBehaviour:
   - <CreatedItem>k__BackingField: {fileID: 11400000, guid: 24881f0989e53e3489d99bc37ee2e7ef,
       type: 2}
     <TypeOfTransformation>k__BackingField: 2
-    <TimeToTransform>k__BackingField: 20
-    <RequiredItems>k__BackingField: []
-  - <CreatedItem>k__BackingField: {fileID: 11400000, guid: 24881f0989e53e3489d99bc37ee2e7ef,
-      type: 2}
-    <TypeOfTransformation>k__BackingField: 2
-    <TimeToTransform>k__BackingField: 5
+    <TimeToTransform>k__BackingField: 3.5
     <RequiredItems>k__BackingField:
     - {fileID: 11400000, guid: c6d7bf9ec824f1749bc5b39cede16b0b, type: 2}
     - {fileID: 11400000, guid: c6d7bf9ec824f1749bc5b39cede16b0b, type: 2}
   - <CreatedItem>k__BackingField: {fileID: 11400000, guid: c6d7bf9ec824f1749bc5b39cede16b0b,
       type: 2}
     <TypeOfTransformation>k__BackingField: 1
-    <TimeToTransform>k__BackingField: 7
+    <TimeToTransform>k__BackingField: 5
     <RequiredItems>k__BackingField:
     - {fileID: 11400000, guid: 36b46ac0f46d97e4e813b463007d5998, type: 2}
+  - <CreatedItem>k__BackingField: {fileID: 11400000, guid: cec9e25a24e38564885cd894baa22f94,
+      type: 2}
+    <TypeOfTransformation>k__BackingField: 1
+    <TimeToTransform>k__BackingField: 5
+    <RequiredItems>k__BackingField:
+    - {fileID: 11400000, guid: 26191e45a1439584f8d022da976f9a9d, type: 2}
+  - <CreatedItem>k__BackingField: {fileID: 11400000, guid: b67e91420bcbed44890664dcfb4a756e,
+      type: 2}
+    <TypeOfTransformation>k__BackingField: 2
+    <TimeToTransform>k__BackingField: 3.5
+    <RequiredItems>k__BackingField:
+    - {fileID: 11400000, guid: cec9e25a24e38564885cd894baa22f94, type: 2}
+    - {fileID: 11400000, guid: cec9e25a24e38564885cd894baa22f94, type: 2}
+  - <CreatedItem>k__BackingField: {fileID: 11400000, guid: 02c329f95926b2f4eb7fb9d9caebaedb,
+      type: 2}
+    <TypeOfTransformation>k__BackingField: 1
+    <TimeToTransform>k__BackingField: 10
+    <RequiredItems>k__BackingField:
+    - {fileID: 11400000, guid: 4f618ad43d3e6ae4f88574c58b81a7f8, type: 2}
+  - <CreatedItem>k__BackingField: {fileID: 11400000, guid: 0c1dd7f4e37a9fe4e8dd7c037792f643,
+      type: 2}
+    <TypeOfTransformation>k__BackingField: 2
+    <TimeToTransform>k__BackingField: 3.5
+    <RequiredItems>k__BackingField:
+    - {fileID: 11400000, guid: c6d7bf9ec824f1749bc5b39cede16b0b, type: 2}
+    - {fileID: 11400000, guid: cec9e25a24e38564885cd894baa22f94, type: 2}
+  - <CreatedItem>k__BackingField: {fileID: 11400000, guid: 0c1dd7f4e37a9fe4e8dd7c037792f643,
+      type: 2}
+    <TypeOfTransformation>k__BackingField: 2
+    <TimeToTransform>k__BackingField: 3.5
+    <RequiredItems>k__BackingField:
+    - {fileID: 11400000, guid: c6d7bf9ec824f1749bc5b39cede16b0b, type: 2}
+    - {fileID: 11400000, guid: cec9e25a24e38564885cd894baa22f94, type: 2}
+  - <CreatedItem>k__BackingField: {fileID: 11400000, guid: 9e4c8e5311ea448459fc020164ec62cb,
+      type: 2}
+    <TypeOfTransformation>k__BackingField: 2
+    <TimeToTransform>k__BackingField: 3.5
+    <RequiredItems>k__BackingField:
+    - {fileID: 11400000, guid: c6d7bf9ec824f1749bc5b39cede16b0b, type: 2}
+    - {fileID: 11400000, guid: 02c329f95926b2f4eb7fb9d9caebaedb, type: 2}
+  - <CreatedItem>k__BackingField: {fileID: 11400000, guid: 73a3dc531405e984d812a93f502e3b8a,
+      type: 2}
+    <TypeOfTransformation>k__BackingField: 2
+    <TimeToTransform>k__BackingField: 3.5
+    <RequiredItems>k__BackingField:
+    - {fileID: 11400000, guid: cec9e25a24e38564885cd894baa22f94, type: 2}
+    - {fileID: 11400000, guid: 02c329f95926b2f4eb7fb9d9caebaedb, type: 2}

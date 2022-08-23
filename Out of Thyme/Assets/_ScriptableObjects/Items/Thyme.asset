@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Name>k__BackingField: Thyme
   <ScoreValue>k__BackingField: 6
-  <VisualPrefab>k__BackingField: {fileID: 9161659523059593097, guid: a818bcd9ca1130946a154a9a6b26d42a,
+  <VisualPrefab>k__BackingField: {fileID: 1965021379386753703, guid: 0893c102c283d514bb40faf4d6ace4ce,
     type: 3}
   <OffSetHeldOnPlayerHead>k__BackingField: {x: 0, y: 0.25, z: 0}
   <OffsetHeldOnInteractableItemHolder>k__BackingField: {x: 0, y: 0, z: 0}

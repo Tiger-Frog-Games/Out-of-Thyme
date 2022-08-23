@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a3dee6f73ebb2459185670b0ec2403, type: 3}
+  m_Name: Potatoe and Thyme Soup
+  m_EditorClassIdentifier: 
+  <Name>k__BackingField: Potatoe and Thyme Soup
+  <ScoreValue>k__BackingField: 12
+  <VisualPrefab>k__BackingField: {fileID: 1965021379386753703, guid: b767aff8108bc244da39eec28c2c489f,
+    type: 3}
+  <OffSetHeldOnPlayerHead>k__BackingField: {x: 0, y: 0.25, z: 0}
+  <OffsetHeldOnInteractableItemHolder>k__BackingField: {x: 0, y: 0, z: 0}

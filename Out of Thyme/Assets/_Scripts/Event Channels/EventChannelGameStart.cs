@@ -36,6 +36,12 @@ namespace TigerFrogGames
             StartMin = startMin;
             StartSec = startSec;
         }
+
+        public void changeNumberOfPlayers(int i)
+        {
+            NumberOfPlayers = i;
+        }
+        
     }
     
 }

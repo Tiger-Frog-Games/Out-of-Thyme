@@ -29,7 +29,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1023130932789048714}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1023130932789048715
 GameObject:
@@ -59,8 +59,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1023130934241826160}
-  - {fileID: 5788048294264904668}
   - {fileID: 8248282021482965220}
   - {fileID: 1023130933969368704}
   - {fileID: 5113788755481951109}
@@ -78,6 +76,7 @@ GameObject:
   - component: {fileID: 1023130933347635570}
   - component: {fileID: 1023130933347635568}
   - component: {fileID: 1023130933347635583}
+  - component: {fileID: 2987066045504763639}
   m_Layer: 6
   m_Name: Recipe  Transformer - Cooking Pot
   m_TagString: Untagged
@@ -133,6 +132,21 @@ MonoBehaviour:
   - {fileID: 2175944166674142655}
   transformationType: 2
   recipies: {fileID: 11400000, guid: e3497860bfa5ea14f87c8dff3114ee9a, type: 2}
+--- !u!114 &2987066045504763639
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1023130933347635571}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6506c2439461c184781b6493cea048ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _recipeCombiner: {fileID: 1023130933347635583}
+  thingToRotate: {fileID: 8360963670342612269}
+  rotateSpeed: {x: 0, y: 120, z: 0}
 --- !u!1 &1023130933969368705
 GameObject:
   m_ObjectHideFlags: 0
@@ -164,7 +178,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1023130932789048714}
-  m_RootOrder: 3
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &1023130933969368709
 MeshFilter:
@@ -240,11 +254,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1023130934241826161}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.15, y: 0.56999993, z: -0.202}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -0.173, y: 1, z: -0.115}
+  m_LocalScale: {x: 1.6666666, y: 5, z: 1.6666666}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1023130932789048714}
+  m_Father: {fileID: 5113788755481951109}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2175944166674142655
@@ -271,11 +285,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2175944166674142655}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.148, y: 0.56999993, z: 0.043}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0.126, y: 1.0000002, z: 0.101}
+  m_LocalScale: {x: 1.6666666, y: 5, z: 1.6666666}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1023130932789048714}
+  m_Father: {fileID: 5113788755481951109}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8360963670342612269
@@ -307,9 +321,11 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.6, y: 0.2, z: 0.6}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1023130934241826160}
+  - {fileID: 5788048294264904668}
   m_Father: {fileID: 1023130932789048714}
-  m_RootOrder: 4
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &5097723680007592842
 MeshFilter:
