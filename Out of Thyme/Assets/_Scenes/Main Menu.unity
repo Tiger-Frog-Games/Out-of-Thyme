@@ -11686,8 +11686,8 @@ MonoBehaviour:
   startGameData:
     <NumberOfPlayers>k__BackingField: 1
     <Difficulty>k__BackingField: 1
-    <StartMin>k__BackingField: 1
-    <StartSec>k__BackingField: 30
+    <StartMin>k__BackingField: 2
+    <StartSec>k__BackingField: 0
 --- !u!4 &1450839948
 Transform:
   m_ObjectHideFlags: 0

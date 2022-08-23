@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d59c77a9816fe84c907afdf2852a1b9, type: 3}
   m_Name: Potatoe and Thyme Soup
   m_EditorClassIdentifier: 
-  <TimeToComplete>k__BackingField: 45
+  <TimeToComplete>k__BackingField: 60
   <RequiredItem>k__BackingField: {fileID: 11400000, guid: 73a3dc531405e984d812a93f502e3b8a,
     type: 2}
