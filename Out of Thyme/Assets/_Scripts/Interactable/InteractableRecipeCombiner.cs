@@ -13,16 +13,12 @@ namespace TigerFrogGames
     public class InteractableRecipeCombiner : InteratableItemHolder
     {
         #region Variables
-
-        [SerializeField] private int maxNumberOfItems;
-        [SerializeField] private GameObject[] LocationOfHeldGameObjects;
         
         [SerializeField] private ItemTransformationType transformationType;
         
         [SerializeField] private RecipeList recipies;
-
-         private List<Item> _heldItemsToBeCombined = new ();
-         private RecipeData _currentRecipe;
+        
+        private RecipeData _currentRecipe;
          
          public bool _isTransoforming { private set; get; }
          public float transformationPercent { private set; get; }
@@ -55,34 +51,29 @@ namespace TigerFrogGames
                 }
             }
         }
-
-        private void OnValidate()
-        {
-            if (maxNumberOfItems != LocationOfHeldGameObjects.Length)
-            {
-                Debug.LogWarning($"Warning {this.gameObject} - Max Numbers of Items and length of Location of Held Game Object must be equal");
-            }
-        }
-
+        
         #endregion
 
         #region Methods
 
         private void completeRecipe()
         {
-            if(_heldItemsToBeCombined.Count == 0) return;
+            if(_heldItems.Count == 0) return;
 
-            _heldItem = _heldItemsToBeCombined[0];
+            var _heldItem = _heldItems[0];
 
-            for (int i = 1; i < _heldItemsToBeCombined.Count; i++)
+            for (int i = 1; i < _heldItems.Count; i++)
             {
-                ObjectPool.Store(_heldItemsToBeCombined[i].gameObject);
+                ObjectPool.Store(_heldItems[i].gameObject);
             }
             
             _heldItem.SetUpItem(_currentRecipe.CreatedItem);
             _heldItem.transform.position = heldObjectRoot.transform.position;
             
-            _heldItemsToBeCombined.Clear();
+            _heldItems.Clear();
+            
+            _heldItems.Add(_heldItem);
+            
             _currentRecipe = default;
             _isTransoforming = false;
         }
@@ -90,39 +81,18 @@ namespace TigerFrogGames
         
         protected override void addPlayerItemToItemHolder(PlayerItemHolder playerItemHolder)
         {
-            if(_heldItemsToBeCombined.Count  >= maxNumberOfItems) return;
-            
-            _heldItemsToBeCombined.Add(playerItemHolder.HeldItem);
-
-            
-            
-            playerItemHolder.PlaceItem(LocationOfHeldGameObjects[_heldItemsToBeCombined.Count-1].transform);
+            base.addPlayerItemToItemHolder(playerItemHolder);
             
             startTransforming();
         }
 
         protected override void pickUpFromItemHolder(PlayerItemHolder playerItemHolder)
         {
-            //Pick up completed Item
-            if (_heldItem != null)
-            {
-                base.pickUpFromItemHolder(playerItemHolder);
-                if(_isTransoforming == true) stopTransforming();
-                return;
-            }
-            
             //Cant interupt a recipe being transformed
             if(_isTransoforming) return;
             
-            //Pick up the last one in
-            if (_heldItemsToBeCombined.Count > 0)
-            {
-                var tempItem = _heldItemsToBeCombined[_heldItemsToBeCombined.Count - 1];
-                _heldItemsToBeCombined.RemoveAt(_heldItemsToBeCombined.Count - 1);
-                
-                playerItemHolder.PickUpItem(tempItem);
-                
-            }
+            base.pickUpFromItemHolder(playerItemHolder);
+            
             
         }
         
@@ -135,7 +105,7 @@ namespace TigerFrogGames
         {
             if(_isTransoforming) stopTransforming();
             
-            _currentRecipe = recipies.GetValidRecipie(transformationType, _heldItemsToBeCombined);
+            _currentRecipe = recipies.GetValidRecipie(transformationType, _heldItems);
             
             if(_currentRecipe.TimeToTransform == 0) return;
 

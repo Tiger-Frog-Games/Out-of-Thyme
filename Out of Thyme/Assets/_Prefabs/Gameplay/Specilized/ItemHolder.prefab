@@ -92,6 +92,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   heldObjectRoot: {fileID: 1064462520909777320}
+  maxNumberOfItems: 1
+  locationOfHeldItems:
+  - {fileID: 1064462520909777320}
 --- !u!1 &1064462520909777320
 GameObject:
   m_ObjectHideFlags: 0

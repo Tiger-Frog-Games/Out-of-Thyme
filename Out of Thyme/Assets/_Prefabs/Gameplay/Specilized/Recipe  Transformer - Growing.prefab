@@ -318,7 +318,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   heldObjectRoot: {fileID: 8388825918796741708}
   maxNumberOfItems: 1
-  LocationOfHeldGameObjects:
+  locationOfHeldItems:
   - {fileID: 8388825918796741708}
   transformationType: 1
   recipies: {fileID: 11400000, guid: e3497860bfa5ea14f87c8dff3114ee9a, type: 2}

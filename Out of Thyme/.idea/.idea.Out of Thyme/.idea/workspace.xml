@@ -31,7 +31,6 @@
     <setting file="file://$PROJECT_DIR$/Assets/_Scripts/UI/TextIntEventLisiner.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Scripts/UI/UIRequestHolder.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Scripts/UI/UITimerDisplayer.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.inputsystem@1.3.0/InputSystem/Plugins/PlayerInput/PlayerInput.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -67,7 +66,7 @@
       <method v="2" />
     </configuration>
     <configuration name="UnitTests (batch mode)" type="RunUnityExe" factoryName="Unity Executable">
-      <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2021.3.4f1\Editor\Unity.exe" />
+      <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2021.3.8f1\Editor\Unity.exe" />
       <option name="PROGRAM_PARAMETERS" value="-runTests -batchmode -projectPath &quot;C:\Users\frogg\Documents\GitHub\Out-of-Thyme\Out of Thyme&quot; -testResults Logs/results.xml -testPlatform EditMode -debugCodeOptimization" />
       <option name="WORKING_DIRECTORY" value="C:\Users\frogg\Documents\GitHub\Out-of-Thyme\Out of Thyme" />
       <option name="PASS_PARENT_ENVS" value="1" />
@@ -109,7 +108,10 @@
       <workItem from="1661015805481" duration="6292000" />
       <workItem from="1661122448329" duration="10522000" />
       <workItem from="1661143920225" duration="39799000" />
-      <workItem from="1661267984501" duration="10982000" />
+      <workItem from="1661267984501" duration="11576000" />
+      <workItem from="1661887810613" duration="4014000" />
+      <workItem from="1662176339006" duration="1942000" />
+      <workItem from="1662181362245" duration="460000" />
     </task>
     <servers />
   </component>

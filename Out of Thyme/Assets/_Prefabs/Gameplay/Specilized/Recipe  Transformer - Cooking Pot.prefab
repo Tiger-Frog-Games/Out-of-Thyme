@@ -127,7 +127,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   heldObjectRoot: {fileID: 315027774280432966}
   maxNumberOfItems: 2
-  LocationOfHeldGameObjects:
+  locationOfHeldItems:
   - {fileID: 1023130934241826161}
   - {fileID: 2175944166674142655}
   transformationType: 2
